@@ -58,24 +58,6 @@ This method provided quick results for passwords that were already indexed in pu
 
 ---
 
-### 3. Brute-Force Testing  
-For the hashes that were still encrypted, brute-force techniques were explored to determine their complexity. The following command was executed for a *hybrid attack*:
-
-bash
-hashcat -m 0 -a 6 hashes.txt /usr/share/wordlists/rockyou.txt ?l?l?l?l?l?l
-
-
-Despite some progress, the most difficult hashes remained unsolved.  
-A full brute-force attempt was made for 14-16 lowercase characters:
-
-bash
-hashcat -m 0 -a 3 hashes.txt ?l?l?l?l?l?l?l?l?l?l?l?l?l?l --force
-
-
-The expected cracking time was calculated to *exceed 30 years*, making the method completely unrealistic.
-
----
-
 ## Findings  
 - Six passwords were successfully decrypted.  
 - The remaining four were too complex for both dictionary-based and brute-force cracking.  
